@@ -30,8 +30,15 @@ const postSchema = mongoose.Schema({
     comments: {
         type: String, required: true
     },
-
-
+    status: {
+        type: String,
+        enum: ['pending', 'approved', 'rejected'],
+        default: 'pending'
+    },
+    userEmail: {
+        type: String,
+        required: false // Optional for backward compatibility
+    }
 
 })
 
